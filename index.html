@@ -10,8 +10,7 @@
     <h1>Grade Calculator</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
-        {{ form.prelim_grade.label }}
-        {{ form.prelim_grade() }}
+        {{ form.prelim_grade.label }} {{ form.prelim_grade() }}
         {{ form.submit(class="button") }}
     </form>
 
@@ -23,6 +22,7 @@
             <p>Required Final grade to pass: {{ required_final }}</p>
         {% endif %}
         <p>{{ message }}</p>
+        <p>{{ deans_lister_message }}</p>
     {% endif %}
 </body>
 </html>
