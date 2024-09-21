@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.prelim_grade.label }} {{ form.prelim_grade() }}
+        {{ form.submit(class="button") }}
+    </form>
+
+    {% if required_midterm is not none or required_final is not none or message %}
+        {% if required_midterm is not none %}
+            <p>Required Midterm grade to pass: {{ required_midterm }}</p>
+        {% endif %}
+        {% if required_final is not none %}
+            <p>Required Final grade to pass: {{ required_final }}</p>
+        {% endif %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
