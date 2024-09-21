@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,7 @@
         {{ form.prelim_grade() }}
         {{ form.submit(class="button") }}
     </form>
+
     {% if required_midterm is not none or required_final is not none or message %}
         {% if required_midterm is not none %}
             <p>Required Midterm grade to pass: {{ required_midterm }}</p>
@@ -22,7 +23,6 @@
             <p>Required Final grade to pass: {{ required_final }}</p>
         {% endif %}
         <p>{{ message }}</p>
-        <p>{{ deans_lister_message }}</p>
     {% endif %}
 </body>
 </html>
