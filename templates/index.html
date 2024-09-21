@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade Calculator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="static/style.css">  <!-- Changed this line -->
 </head>
 <body>
     <h1>Grade Calculator</h1>
-    <form method="POST" action="/">
+    <form method="POST">
         {{ form.hidden_tag() }}
-        <div>
-            {{ form.prelim_grade.label }} {{ form.prelim_grade() }}
-        </div>
-        <div>
-            {{ form.submit(class="button") }}
-        </div>
+        {{ form.prelim_grade.label }} {{ form.prelim_grade() }}
+        {{ form.submit(class="button") }}
     </form>
-
     {% if required_midterm is not none or required_final is not none or message %}
         {% if required_midterm is not none %}
             <p>Required Midterm grade to pass: {{ required_midterm }}</p>
